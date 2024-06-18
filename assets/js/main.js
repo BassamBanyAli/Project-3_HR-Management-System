@@ -1,10 +1,4 @@
-/**
-* Template Name: FlexStart
-* Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-* Updated: Jun 14 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
@@ -61,127 +55,127 @@
   /**
    * Scroll top button
    */
-  // let scrollTop = document.querySelector('.scroll-top');
+  let scrollTop = document.querySelector('.scroll-top');
 
-  // function toggleScrollTop() {
-  //   if (scrollTop) {
-  //     window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-  //   }
-  // }
-  // scrollTop.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth'
-  //   });
-  // });
+  function toggleScrollTop() {
+    if (scrollTop) {
+      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+    }
+  }
+  scrollTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 
-  // window.addEventListener('load', toggleScrollTop);
-  // document.addEventListener('scroll', toggleScrollTop);
+  window.addEventListener('load', toggleScrollTop);
+  document.addEventListener('scroll', toggleScrollTop);
 
   /**
    * Animation on scroll function and init
    */
-  // function aosInit() {
-  //   AOS.init({
-  //     duration: 600,
-  //     easing: 'ease-in-out',
-  //     once: true,
-  //     mirror: false
-  //   });
-  // }
-  // window.addEventListener('load', aosInit);
+  function aosInit() {
+    AOS.init({
+      duration: 600,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  }
+  window.addEventListener('load', aosInit);
 
-  // /**
-  //  * Initiate glightbox
-  //  */
-  // const glightbox = GLightbox({
-  //   selector: '.glightbox'
-  // });
+  /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
 
   /**
    * Initiate Pure Counter
    */
-  // new PureCounter();
+  new PureCounter();
 
   /**
    * Frequently Asked Questions Toggle
    */
-  // document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
-  //   faqItem.addEventListener('click', () => {
-  //     faqItem.parentNode.classList.toggle('faq-active');
-  //   });
-  // });
+  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
+    faqItem.addEventListener('click', () => {
+      faqItem.parentNode.classList.toggle('faq-active');
+    });
+  });
 
   /**
    * Init isotope layout and filters
    */
-  // document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-  //   let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-  //   let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-  //   let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
-  //   let initIsotope;
-  //   imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-  //     initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-  //       itemSelector: '.isotope-item',
-  //       layoutMode: layout,
-  //       filter: filter,
-  //       sortBy: sort
-  //     });
-  //   });
+    let initIsotope;
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+        itemSelector: '.isotope-item',
+        layoutMode: layout,
+        filter: filter,
+        sortBy: sort
+      });
+    });
 
-  //   isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-  //     filters.addEventListener('click', function() {
-  //       isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-  //       this.classList.add('filter-active');
-  //       initIsotope.arrange({
-  //         filter: this.getAttribute('data-filter')
-  //       });
-  //       if (typeof aosInit === 'function') {
-  //         aosInit();
-  //       }
-  //     }, false);
-  //   });
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+      filters.addEventListener('click', function() {
+        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+        this.classList.add('filter-active');
+        initIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        if (typeof aosInit === 'function') {
+          aosInit();
+        }
+      }, false);
+    });
 
-  // });
+  });
 
-  // /**
-  //  * Init swiper sliders
-  //  */
-  // function initSwiper() {
-  //   document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-  //     let config = JSON.parse(
-  //       swiperElement.querySelector(".swiper-config").innerHTML.trim()
-  //     );
+  /**
+   * Init swiper sliders
+   */
+  function initSwiper() {
+    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+      let config = JSON.parse(
+        swiperElement.querySelector(".swiper-config").innerHTML.trim()
+      );
 
-  //     if (swiperElement.classList.contains("swiper-tab")) {
-  //       initSwiperWithCustomPagination(swiperElement, config);
-  //     } else {
-  //       new Swiper(swiperElement, config);
-  //     }
-  //   });
-  // }
+      if (swiperElement.classList.contains("swiper-tab")) {
+        initSwiperWithCustomPagination(swiperElement, config);
+      } else {
+        new Swiper(swiperElement, config);
+      }
+    });
+  }
 
-  // window.addEventListener("load", initSwiper);
+  window.addEventListener("load", initSwiper);
 
-  // /**
-  //  * Correct scrolling position upon page load for URLs containing hash links.
-  //  */
-  // window.addEventListener('load', function(e) {
-  //   if (window.location.hash) {
-  //     if (document.querySelector(window.location.hash)) {
-  //       setTimeout(() => {
-  //         let section = document.querySelector(window.location.hash);
-  //         let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-  //         window.scrollTo({
-  //           top: section.offsetTop - parseInt(scrollMarginTop),
-  //           behavior: 'smooth'
-  //         });
-  //       }, 100);
-  //     }
-  //   }
-  // });
+  /**
+   * Correct scrolling position upon page load for URLs containing hash links.
+   */
+  window.addEventListener('load', function(e) {
+    if (window.location.hash) {
+      if (document.querySelector(window.location.hash)) {
+        setTimeout(() => {
+          let section = document.querySelector(window.location.hash);
+          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          window.scrollTo({
+            top: section.offsetTop - parseInt(scrollMarginTop),
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }
+  });
 
   /**
    * Navmenu Scrollspy
@@ -206,3 +200,164 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+
+  // form 1 contact
+// document.getElementById("form1").addEventListener("submit", (event)=>{
+  
+//   const firstName = document.getElementById('firstname').value
+//   const lastName = document.getElementById('lastname').value
+//   const phone = document.getElementById('phone').value
+//   const email = document.getElementById('email').value
+//   const subject = document.getElementById('subject').value
+//   const description = document.getElementById('description').value
+
+
+//   // form 1 contact storage
+//   localStorage.setItem('First Name', firstName);
+//   localStorage.setItem('Last Name', lastName);
+//   localStorage.setItem('Phone', phone);
+//   localStorage.setItem('Email', email);
+//   localStorage.setItem('Subject', subject);
+//   localStorage.setItem('Description', description);
+
+//   alert('Your contact response has been recorded.!')
+//   event.defaultPrevented();
+// });
+
+
+//   // form 2 feedback
+//   document.getElementById('form2').addEventListener('submit', (x)=>{
+    
+    
+//    const userName = document.getElementById('username').value
+//    const date = document.getElementById('date').value
+//    const position = document.getElementById('position').value
+//    const email2 = document.getElementById('email2').value
+//    const problems =  document.getElementById('problems').value
+//    const description = document.getElementById('description2').value
+
+//     // form 2 feedback storage
+//     localStorage.setItem('User Name', userName)
+//     localStorage.setItem('Date', date)
+//     localStorage.setItem('Position', position)
+//     localStorage.setItem('Email', email2)
+//     localStorage.setItem('Problem', problems)
+//     localStorage.setItem('Description', description)
+
+//     alert('Your feedback response has been recorded.!')
+//     x.defaultPrevented();
+
+//   });
+
+// 
+
+
+  // form 1 contact
+document.getElementById("form1").addEventListener("submit", (y)=>{
+  
+  const firstName = document.getElementById('firstname').value
+  const lastName = document.getElementById('lastname').value
+  const phone = document.getElementById('phone').value
+  const email = document.getElementById('email').value
+  const subject = document.getElementById('subject').value
+  const description = document.getElementById('description').value
+
+// form 1 storage contact
+const form1 = {
+ ' First Name ': firstName,
+  'Last Name':lastName,
+  'Phone':phone,
+  'Email':email,
+  'Subject':subject,
+  'Description':description
+}
+let contact_array1=JSON.parse(localStorage.getItem('contact_array1')) || []
+ console.log(form1)
+
+contact_array1.push(form1)
+
+localStorage.setItem('contact_array1', JSON.stringify(contact_array1))
+
+
+
+alert('Your contact response has been recorded.!')
+  y.defaultPrevented();
+
+});
+
+//////////////////////////////////////////////////////////////////////
+// 
+// 
+//   // form 2 feedback
+  document.getElementById('form2').addEventListener('submit', (x)=>{
+    
+    
+   const userName = document.getElementById('username').value
+   const date = document.getElementById('date').value
+   const position = document.getElementById('position').value
+   const email2 = document.getElementById('email2').value
+   const problems =  document.getElementById('problems').value
+   const description = document.getElementById('description2').value
+
+    // form 2 feedback storage
+    const form2={
+      'User Name':userName,
+      'Date':date,
+      'Position':position,
+      'Email':email2,
+      'Problems':problems,
+      'Description':description,
+    }
+
+
+    let feedback_array2= JSON.parse(localStorage.getItem('feedback_array2')) || []
+    console.log(form2)
+  
+
+
+    feedback_array2.push(form2)
+    localStorage.setItem('feedback_array2', JSON.stringify(feedback_array2))
+
+    alert('Your feedback response has been recorded.!')
+    x.defaultPrevented();
+
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('itemForm');
+            const input = document.getElementById('itemInput');
+            const cardContainer = document.getElementById('cardContainer');
+
+            // Function to create and display cards
+            const createCard = (text) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.textContent = text;
+                cardContainer.appendChild(card);
+            };
+
+            // Add item and display as card
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const itemText = input.value.trim();
+                if (itemText) {
+                    createCard(itemText);
+                    input.value = '';
+                }
+            });
+        });
+
+
+
+
+     
+    })
+
+
+
