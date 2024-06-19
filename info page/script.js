@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${employee.id}</td>
-                <td><img src="${employee.image}" alt="${employee.name}" class="employee-image"></td>
+                <td> <div class="image-container"><img src="${employee.image}" alt="${employee.name}" class="employee-image"></div></td>
                 <td>${employee.name}</td>
                 <td>${employee.position}</td>
                 <td>${employee.department}</td>
