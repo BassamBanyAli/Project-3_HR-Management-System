@@ -1,21 +1,55 @@
+
+    
+
+
+
+
 document.getElementById('taskForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting the default way
 
+
+    // Load employee data from JSON file
+    fetch('../info page/employees.json')
+.then(response => response.json())
+.then(data => {
+    // Display all employees initially
+    const employeeName1 = document.getElementById('employeeName');
+    // Filter employees based on search input
+    
+        const searchTerm = employeeName1.value.toLowerCase();
+        const filteredEmployees = data.filter(employee => 
+            employee.name.toLowerCase().includes(searchTerm) ||
+            employee.position.toLowerCase().includes(searchTerm) ||
+            employee.department.toLowerCase().includes(searchTerm)
+            // Add more fields for searching as needed
+        );
+        console.log(filteredEmployees);
+   
+
+
     // Get form data
-    const employeeName = document.getElementById('employeeName').value;
+    const employeeName = filteredEmployees[0].name;
+    const employeePosition=filteredEmployees[0].position;
+    const employeeImage=filteredEmployees[0].image;
     const title = document.getElementById('title').value;
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;
     const description = document.getElementById('description').value;
 
+
+
     // Create a task object
     const task = {
         employeeName: employeeName,
+        position:employeePosition,
+        image:employeeImage,
         title: title,
         startDate: startDate,
         endDate: endDate,
-        description: description
+        description: description,
     };
+
+
 
     // Store the task object in local storage
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -30,6 +64,10 @@ document.getElementById('taskForm').addEventListener('submit', function(event) {
 
     // Clear form fields
     document.getElementById('taskForm').reset();
+
+
+})
+.catch(error => console.error('Error loading JSON file:', error));
 });
 
 function addTaskCard(task) {
@@ -50,7 +88,7 @@ function addTaskCard(task) {
     
     const img = document.createElement('img');
     img.className = 'img-fluid';
-    img.src = 'https://bootdey.com/img/Content/avatar/avatar6.png'; // Placeholder image
+    img.src = `../${task.image}`; // Placeholder image
     img.alt = 'dashboard-user';
     
     const col = document.createElement('div');
@@ -60,7 +98,7 @@ function addTaskCard(task) {
     h5.textContent = task.employeeName;
     
     const span = document.createElement('span');
-    span.textContent = task.title;
+    span.textContent = task.position;
     
     const taskList = document.createElement('ul');
     taskList.className = 'task-list';
@@ -71,7 +109,7 @@ function addTaskCard(task) {
     taskIcon.className = 'task-icon';
     
     const taskTitle = document.createElement('h6');
-    taskTitle.innerHTML = `${task.employeeName} <span class="float-right text-muted">${new Date(task.startDate).toLocaleDateString()}</span>`;
+    taskTitle.innerHTML = `${task.title} <span class="float-right text-muted">${new Date(task.startDate).toLocaleDateString()}</span>`;
     
     const taskDescription = document.createElement('p');
     taskDescription.className = 'text-muted';
