@@ -3003,18 +3003,18 @@ ul.timeline>li:before {
 }
 
 .gallery p {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .paper:nth-child(1) {
   background: -webkit-linear-gradient(left, black, var(--accent-color));
-  color: wheat;
+  color: whitesmoke;
 
 }
 
 .paper:nth-child(2) {
   background: -webkit-linear-gradient(left, black, var(--accent-color));
-  color: wheat;
+  color: whitesmoke;
 }
 
 
