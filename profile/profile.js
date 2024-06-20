@@ -1,3 +1,5 @@
+ 
+ 
  async function checkIfINLocal() {
    if (!localStorage.getItem('hrJson')) {
      try {
