@@ -238,4 +238,12 @@ a:hover {
 .section .btn-editprofile {
   margin-left: -1%;
 }
+@media (max-width:450px){
+  div#card-img {
+    left: 0;
+}
+div#card-info {
+  top: 25%;
+}
 
+}

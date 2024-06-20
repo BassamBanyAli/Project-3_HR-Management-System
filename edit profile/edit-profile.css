@@ -180,3 +180,17 @@ a:hover {
 #sectionprofile{
   margin-right: 8%;
 }
+
+@media (max-width:450px){
+ 
+  div#card {
+    left: 0;
+  }
+  a#saveButt {
+    margin-left: 25px;
+  }
+  
+  a.btn-cancle.btn-danger.flex-md-shrink-0 {
+    margin-left: 125px;
+  }
+  }
