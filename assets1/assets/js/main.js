@@ -292,29 +292,55 @@ alert('Your contact response has been recorded.!')
 // 
 // 
 //   // form 2 feedback
-  document.getElementById('form2').addEventListener('submit', (x)=>{
+document.getElementById('form2').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting the default way
     
-    
-   const userName = document.getElementById('username').value
-   const date = document.getElementById('date').value
-   const position = document.getElementById('position').value
-   const email2 = document.getElementById('email2').value
-   const problems =  document.getElementById('problems').value
-   const description = document.getElementById('description2').value
+
+
+  // Load employee data from JSON file
+  fetch('../../info page/employees.json')
+  .then(response => response.json())
+  .then(data => {
+      // Display all employees initially
+      const employeeNameForFeedback = document.getElementById('username');
+      // Filter employees based on search input
+      
+          const searchTerm = employeeNameForFeedback .value.toLowerCase();
+          const filteredEmployeesForFeedback = data.filter(employee => 
+              employee.name.toLowerCase().includes(searchTerm) ||
+              employee.position.toLowerCase().includes(searchTerm) ||
+              employee.department.toLowerCase().includes(searchTerm)
+              // Add more fields for searching as needed
+          );
+          console.log(filteredEmployeesForFeedback);
+     
+  
+
+
+          const employeeName = filteredEmployeesForFeedback[0].name;
+          const email = document.getElementById('email2').value;
+          const employeePosition=filteredEmployeesForFeedback[0].position;
+          const employeeImage=filteredEmployeesForFeedback[0].image;
+          const date = document.getElementById('date').value;
+          const description = document.getElementById('description2').value;
+          
+
+
 
     // form 2 feedback storage
     const form2={
-      'User Name':userName,
-      'Date':date,
-      'Position':position,
-      'Email':email2,
-      'Problems':problems,
-      'Description':description,
+      name:employeeName,
+      date:date,
+      position:employeePosition,
+      email:email,
+      problems:problems,
+      description:description,
+      image:employeeImage,
     }
 
 
     let feedback_array2= JSON.parse(localStorage.getItem('feedback_array2')) || []
-    console.log(form2)
+    console.log(`fsdfdsfdsfs${feedback_array2}`);
   
 
 
@@ -324,7 +350,11 @@ alert('Your contact response has been recorded.!')
     alert('Your feedback response has been recorded.!')
     x.defaultPrevented();
 
-
+  })
+  .catch(error => {
+    console.error('Error fetching or processing data:', error);
+    // Handle errors from fetch or data processing
+  });
 
 
 

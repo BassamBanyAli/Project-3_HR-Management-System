@@ -45,7 +45,7 @@ localStorage.setItem('feedback_data', feedbackDataString);
 console.log("Data has been stored in local storage.");
 
 // Retrieve the data from local storage
-const retrievedDataString = localStorage.getItem('feedback_data');
+const retrievedDataString = localStorage.getItem('feedback_array2');
 
 // Parse the JSON string back into an array of objects
 const retrievedData = JSON.parse(retrievedDataString);
@@ -70,15 +70,14 @@ function createFeedbackCard(data) {
         const img = document.createElement('img');
         img.classList.add('img-fluid', 'rounded', 'rounded-circle', 'mb-4', 'border', 'border-5');
         img.setAttribute('loading', 'lazy');
-        img.setAttribute('src', 'stock-photo-happy-young-asian-saleswoman-looking-at-camera-welcoming-client-smiling-woman-executive-manager-2179380689.jpg');
+        img.setAttribute('src', item.image);
         img.setAttribute('alt', item.name);
 
         const figcaption = document.createElement('figcaption');
+        const email = document.createElement('p');
+        email.classList.add('card-text', 'text-primary', 'mb-3');
+        email.textContent = item.email;
 
-        const ratings = document.createElement('div');
-        ratings.classList.add('bsb-ratings', 'text-warning', 'mb-3');
-        ratings.setAttribute('data-bsb-star', '5');
-        ratings.setAttribute('data-bsb-star-off', '0');
 
         const description = document.createElement('p');
         description.classList.add('card-text');
@@ -88,7 +87,7 @@ function createFeedbackCard(data) {
         date.classList.add('card-text');
         const dateSmall = document.createElement('small');
         dateSmall.classList.add('text-muted');
-        dateSmall.textContent = item.date;
+        dateSmall.textContent = `Submitted on ${item.date}`;
         date.appendChild(dateSmall);
 
         const name = document.createElement('h4');
@@ -98,8 +97,8 @@ function createFeedbackCard(data) {
         const position = document.createElement('h5');
         position.classList.add('fs-6', 'text-secondary', 'mb-0');
         position.textContent = item.position;
+        figcaption.appendChild(email);
 
-        figcaption.appendChild(ratings);
         figcaption.appendChild(description);
         figcaption.appendChild(date);
         figcaption.appendChild(name);
