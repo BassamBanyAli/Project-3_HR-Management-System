@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/testimonials/testimonial-3/assets/css/testimonial-3.css">
-<link href="../assets/img/logo nex.png" rel="icon">
-  <link href="../assets/img/logo nex.png" rel="apple-touch-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/testimonials/testimonial-3/assets/css/testimonial-3.css">
+  <link href="../assets/img/logo_nex.png" rel="icon">
+  <link href="../assets/img/logo_nex.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -25,43 +25,36 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
-<style>
-            .img-fluid {
-            width: 150px; /* Set a specific width */
-            height: 150px; /* Set a specific height */
-            object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
-        }
+  <style>
+  .img-fluid {
+    width: 150px; /* Set a specific width */
+    height: 150px; /* Set a specific height */
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    }
+    #logonex {
+      width: 70px;
+      height: 12vh;
+    } 
 </style>
 </head>
 <body>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
         <a href="" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="../assets/img/logo_nex.png">
+            <img src="../assets/img/logo_nex.png" id="logonex">
             <!-- <h1 class="sitename">FlexStart</h1> -->
         </a>
-
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="../index/index.html">Home<br></a></li>
-                <li><a href="../servicesPage/services.html">Services</a></li>
-                <li><a href="../about/about.html">About</a></li>
-
-
-                </li>
-                <li><a href="../contact/contact2.html">Contact</a></li>
-                <li><a href="../about/about.html#team">Team</a></li>
-                <li><a href="#">Log Out</a></li>
-
-
+              <li id="HomeLink"><a href="/starterPage/index.html" class="active">Home<br></a></li>
+              <li id="ContactLink"><a href="../contact/contact2.html">Contact Us</a></li>
+              <li id="AboutLink"><a href="../about/about.html">About Us</a></li>
+              <li id="RegsLink"><a href="/regs/index.html">Register</a></li>
+              <li id="LoginLink"><a href="/LoginPage/index.html">Login</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-
-        <a class="btn-getstarted flex-md-shrink-0" href="../LoginPage/home.html"><i class="bi bi-person-check-fill"></i></a>
-
     </div>
 </header>
 <br>
@@ -79,11 +72,8 @@
         </div>
       </div>
     </div>
-  
     <div class="container overflow-hidden">
-      <div id="feedback-container" class="row gy-4 gy-md-0 gx-xxl-5">
-        
-
+      <div id="feedback-container" class="row gy-4 gy-md-5 gx-xxl-5">
         <div class="col-12 col-md-4">
           <div class="card border-0 border-bottom border-primary shadow-sm">
             <div class="card-body p-4 p-xxl-5">
@@ -103,20 +93,13 @@
       </div>
     </div>
   </section>
-
   <main>
     <div>
         <br>
     </div>
     
     </main>
-
     <footer id="footer" class="footer">
-
-
-      
-        
-      
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-3 col-md-6 footer-about">
@@ -130,7 +113,6 @@
               <p><strong>Email:</strong> <span>info@example.com</span></p>
             </div>
           </div>
-         
     
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
@@ -162,7 +144,6 @@
               <a href=""><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
-          
         </div>
       </div>
      
@@ -205,11 +186,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
+  <script src="/scriptForALLPages/script.js"></script>
 
 
 
 
 
+=======
+>>>>>>> c8e85f06d74b406ed74a8dfef8ea8576f1c5b470
   <script src="index.js"></script>
 </body>
 </html>

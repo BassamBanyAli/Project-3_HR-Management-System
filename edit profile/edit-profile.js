@@ -22,6 +22,10 @@ function display(){
    const storedEmail=JSON.parse(localStorage.getItem('hrJson')).email;
    email.value=storedEmail;
 
+   let bio =document.getElementById('bio');
+   const storedBio=localStorage.getItem('bio');
+   bio.textContent=storedBio;
+
 
 
 }
@@ -163,6 +167,10 @@ localStorage.setItem("hrJson", JSON.stringify({ ...JSON.parse(localStorage.getIt
 let jobInput = document.getElementById('Job').value;
 localStorage.setItem("hrJson", JSON.stringify({ ...JSON.parse(localStorage.getItem('hrJson')), Position: jobInput }));
 
+
+//bio
+let bio=document.getElementById('bio').value;
+localStorage.setItem('bio',bio);
 //  phone
 let phoneInput = document.getElementById('Phone').value;
 localStorage.setItem("hrJson", JSON.stringify({ ...JSON.parse(localStorage.getItem('hrJson')), Phone: phoneInput }));
@@ -177,7 +185,7 @@ if (renewPassword !== "") {
   localStorage.setItem("hrJson", JSON.stringify({ ...JSON.parse(localStorage.getItem('hrJson')), password: renewPassword }));
 }
 
-window.location.href = '../profile/profile.html';
+window.location.href = '../profile/profile2.html';
 alert('Profile updated successfully!');
   
 });

@@ -255,38 +255,13 @@
 // 
 
 
+
+
+
   // form 1 contact
-document.getElementById("form1").addEventListener("submit", (y)=>{
-  
-  const firstName = document.getElementById('firstname').value
-  const lastName = document.getElementById('lastname').value
-  const phone = document.getElementById('phone').value
-  const email = document.getElementById('email').value
-  const subject = document.getElementById('subject').value
-  const description = document.getElementById('description').value
-
-// form 1 storage contact
-const form1 = {
- ' First Name ': firstName,
-  'Last Name':lastName,
-  'Phone':phone,
-  'Email':email,
-  'Subject':subject,
-  'Description':description
-}
-let contact_array1=JSON.parse(localStorage.getItem('contact_array1')) || []
- console.log(form1)
-
-contact_array1.push(form1)
-
-localStorage.setItem('contact_array1', JSON.stringify(contact_array1))
 
 
 
-alert('Your contact response has been recorded.!')
-  y.defaultPrevented();
-
-});
 
 //////////////////////////////////////////////////////////////////////
 // 
@@ -295,7 +270,7 @@ alert('Your contact response has been recorded.!')
 document.getElementById('form2').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form from submitting the default way
     
-
+  let form2=[];
 
   // Load employee data from JSON file
   fetch('../../info page/employees.json')
@@ -315,20 +290,19 @@ document.getElementById('form2').addEventListener('submit', function(event) {
           console.log(filteredEmployeesForFeedback);
      
   
+          if (filteredEmployeesForFeedback.length === 0) {
+            console.log('No employees found matching the search criteria.');
 
+            const employeeName = document.getElementById('username').value;
+            const email = document.getElementById('email2').value;
+            const employeePosition=document.getElementById('position').value;
+            const employeeImage= "../../Images/no_person.png";
+            const date = document.getElementById('date').value;
+            const description = document.getElementById('description2').value;
+            
 
-          const employeeName = filteredEmployeesForFeedback[0].name;
-          const email = document.getElementById('email2').value;
-          const employeePosition=filteredEmployeesForFeedback[0].position;
-          const employeeImage=filteredEmployeesForFeedback[0].image;
-          const date = document.getElementById('date').value;
-          const description = document.getElementById('description2').value;
-          
-
-
-
-    // form 2 feedback storage
-    const form2={
+           // form 2 feedback storage
+     form2={
       name:employeeName,
       date:date,
       position:employeePosition,
@@ -337,6 +311,37 @@ document.getElementById('form2').addEventListener('submit', function(event) {
       description:description,
       image:employeeImage,
     }
+    console.log(form2);
+        
+        
+          } else {
+            console.log('Filtered employees:', filteredEmployeesForFeedback);
+        
+
+          const employeeName = filteredEmployeesForFeedback[0].name;
+          const email = document.getElementById('email2').value;
+          const employeePosition=filteredEmployeesForFeedback[0].position;
+          const employeeImage=filteredEmployeesForFeedback[0].image;
+          const date = document.getElementById('date').value;
+          const description = document.getElementById('description2').value;
+
+
+
+             // form 2 feedback storage
+     form2={
+      name:employeeName,
+      date:date,
+      position:employeePosition,
+      email:email,
+      problems:problems,
+      description:description,
+      image:employeeImage,
+    }
+          
+        }
+
+
+ 
 
 
     let feedback_array2= JSON.parse(localStorage.getItem('feedback_array2')) || []

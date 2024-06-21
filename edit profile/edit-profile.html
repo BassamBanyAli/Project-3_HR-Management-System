@@ -24,8 +24,47 @@
   
   <link href="../assets/css/main.css" rel="stylesheet">
   <style>
-    /* Custom CSS styles */
-  </style>
+    .main {
+        padding: 20px;
+    }
+    .pagetitle {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .pagetitle h2 {
+        margin-bottom: 10px;
+    }
+    .pagetitle p {
+        color: #666;
+        font-size: 16px;
+    }
+    .card {
+        margin: auto;
+        max-width: 600px;
+    }
+    .circle-img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .btn-saveprofile, .btn-cancle, .btn-sm {
+        margin-top: 10px;
+    }
+    .btn-saveprofile {
+        background-color: #007bff;
+        color: white;
+    }
+    .btn-cancle {
+        margin-left: 10px;
+    }
+    .btn-sm {
+        margin-right: 5px;
+    }
+    #bio {
+        width: 100%;
+    }
+</style>
 </head>
 
 <body>
@@ -55,7 +94,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted flex-md-shrink-0" href=""><i class="bi bi-person-check-fill"></i></a>
+        <a class="btn-getstarted flex-md-shrink-0" href="../profile/profile2.html"><i class="bi bi-person-check-fill"></i></a>
 
     </div>
 </header>
@@ -73,126 +112,113 @@
 <!-- ahmad: rama need to make the form responsive and some edit for nav  -->
 
 
-    <!-- Section Title -->
-    <main id="main" class="main">
+<main id="main" class="main">
+  <div class="pagetitle" id="pagetitle">
+      <h2>Edit Profile</h2>
+      <p>Update your profile information and settings below</p>
+  </div>
 
-        <div class="pagetitle" id="pagetitle">
-          <h5>Edit Profile</h5>
-          <p>Edit Here</p>
-        </div>
-        
-    
-        <section class="section profile" id="sectionprofile">
-            
-      
-              <div class="col-xl-8">
-      
-                <div class="card" id="card">
-                  <div class="card-body pt-3">
-                   
-                    <div class="tab-content pt-2">
-      
-                       <!-- Profile Edit Form -->
-                       <form oninput="onInput();" id="f1" >
-                        <div class="row mb-3">
-                          <label for="profileImage" class="col-md-4 col-lg-3 col-form-label"></label>
-                          <div class="col-md-8 col-lg-9">
-                            <img src="../Image/blank-profile-picture-973460_960_720.webp" alt="Profile" class="circle-img" id="profileImg" >
-                           
-                            <a class="btn-saveprofile flex-md-shrink-0" href="" id="saveButt"  >Save Changes</a>
-                            <a class="btn-cancle btn-danger flex-md-shrink-0" href="../profile/profile.html">Cancle</a>
-                            <div class="pt-2">
-                              <a  href="#" class="btn btn-primary btn-sm" title="Upload new profile image" id="changePicLink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
-                              </svg></a>
-                              <input type="file" id="fileInput" accept="image/*" style="display: none;">
-                              <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image" id="rmv_img"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                              </svg></a>
-                            </div>
-                            
+  <section class="section profile" id="sectionprofile">
+      <div class="col-xl-12">
+          <div class="card" id="card">
+              <div class="card-body pt-3">
+                  <div class="tab-content pt-2">
+                      <!-- Profile Edit Form -->
+                      <form oninput="onInput();" id="f1">
+                        <div class="row mb-3 justify-content-center">
+                          <div class="col-md-4 col-lg-3 text-center">
+                              <img src="../Image/blank-profile-picture-973460_960_720.webp" alt="Profile" class="circle-img" id="profileImg">
+                              <div class="pt-2">
+                                  <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image" id="changePicLink">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                                          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                          <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+                                      </svg>
+                                  </a>
+                                  <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                                  <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image" id="rmv_img">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                      </svg>
+                                  </a>
+                              </div>
                           </div>
-                        </div>
-    
-                        <div class="row mb-3">
-                          <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                          <div class="col-md-8 col-lg-9">
-                            <input name="fullName" type="text" class="form-control" id="fullName" value="">
-                          </div>
-                        </div>
-    
-                        
-    
-                       
-    
-                        <div class="row mb-3">
-                          <label for="Job" class="col-md-4 col-lg-3 col-form-label">Position</label>
-                          <div class="col-md-8 col-lg-9">
-                            <input name="job" type="text" class="form-control" id="Job" value="">
-                          </div>
-                        </div>
-    
-                        
-    
-                        
-    
-                        <div class="row mb-3">
-                          <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                          <div class="col-md-8 col-lg-9">
-                            <input name="phone" type="text" class="form-control" id="Phone" value="">
-                          </div>
-                        </div>
-    
-                        <div class="row mb-3">
-                          <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                          <div class="col-md-8 col-lg-9">
-                            <input name="email" type="email" class="form-control" id="Email" value="">  <div id="errorEmail" style="color: red;"></div>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                            <div class="col-md-8 col-lg-9">
-                              <input name="password" type="password" class="form-control" id="currentPassword" > <p id="error" style="color: red;"></p>
-                            </div>
-                          </div>
-      
-                          <div class="row mb-3">
-                            <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
-                            <div class="col-md-8 col-lg-9">
-                              <input name="newpassword" type="password" class="form-control" id="newPassword" > <div id="error1" style="color: red;"></div>
-                            </div>
-                          </div>
-      
-                          <div class="row mb-3">
-                            <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                            <div class="col-md-8 col-lg-9">
-                              <input name="renewpassword" type="password" class="form-control" id="renewPassword" > <div id="error2" style="color: red;"></div>
-                            </div>
-                          </div>
-      
-                          
-    
-                        
-                      </form><!-- End Profile Edit Form -->
-    
-      
-                      <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-      
-                       
                       </div>
-      
-                     
-                    </div><!-- End Bordered Tabs -->
-      
-                  </div>
-                </div>
-      
-              </div>
-            </div>
 
-          </section>
+
+                          <div class="row mb-3">
+                              <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="fullName" type="text" class="form-control" id="fullName" value="">
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="Job" class="col-md-4 col-lg-3 col-form-label">Position</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="job" type="text" class="form-control" id="Job" value="">
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="bio" class="col-md-4 col-lg-3 col-form-label">Bio</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <textarea rows="4" cols="50" name="comment" form="usrform" id="bio">Enter text here...</textarea>
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="phone" type="text" class="form-control" id="Phone" value="">
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="email" type="email" class="form-control" id="Email" value="">
+                                  <div id="errorEmail" style="color: red;"></div>
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="password" type="password" class="form-control" id="currentPassword">
+                                  <p id="error" style="color: red;"></p>
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="newpassword" type="password" class="form-control" id="newPassword">
+                                  <div id="error1" style="color: red;"></div>
+                              </div>
+                          </div>
+
+                          <div class="row mb-3">
+                              <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                              <div class="col-md-8 col-lg-9">
+                                  <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                                  <div id="error2" style="color: red;"></div>
+                              </div>
+                          </div>
+
+                          <div class="text-center">
+                              <a class="btn-saveprofile btn btn-success" href="" id="saveButt">Save Changes</a>
+                              <a class="btn-cancle btn btn-danger" href="../profile/profile2.html">Cancel</a>
+                          </div>
+                      </form>
+                      <!-- End Profile Edit Form -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</main>
           
           <footer id="footer" class="footer">
           <hr>
@@ -268,7 +294,7 @@
               <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
                       class="bi bi-arrow-up-short"></i></a>
           
-     <script src="edit2.js"></script>     
+     <script src="edit-profile.js"></script>     
       
 <!-- Vendor JS Files -->
 <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -285,4 +311,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/scriptForALLPages/script.js"></script>
 </body>
+</html>

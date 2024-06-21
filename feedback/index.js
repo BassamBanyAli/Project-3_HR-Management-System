@@ -97,12 +97,14 @@ function createFeedbackCard(data) {
         const position = document.createElement('h5');
         position.classList.add('fs-6', 'text-secondary', 'mb-0');
         position.textContent = item.position;
-        figcaption.appendChild(email);
-
-        figcaption.appendChild(description);
-        figcaption.appendChild(date);
+        
         figcaption.appendChild(name);
         figcaption.appendChild(position);
+        figcaption.appendChild(email);
+        figcaption.appendChild(date);
+        figcaption.appendChild(description);
+        
+
 
         figure.appendChild(img);
         figure.appendChild(figcaption);

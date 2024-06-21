@@ -130,3 +130,7 @@
         margin: 10px auto;
     }
 }
+#header img {
+    width: 7%;
+    height: 15vh;
+}
