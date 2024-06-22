@@ -69,7 +69,7 @@
 <section id="contact" class="contact section">
     <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
         <h2>Contact</h2>
-        <p>Contact Us</p>
+        <p style="font-size: 22px;">Welcome to our Contact Page! We're here to assist you <br> with any questions, comments, or concerns. </p>
     </div>
 
 <!------- register form  ------>
@@ -195,8 +195,8 @@
 
 <!--  -->
 <div class="container section-title" data-aos="fade-up" data-aos-delay="300">
-    <h2>Find Us</h2>
-    <p> location</p>
+    <h2 style="font-size: 18px;">Location</h2>
+
 </div>
 <!-- cards container -->
 <div class="gallery" data-aos="fade-up" data-aos-delay="300">
@@ -346,58 +346,59 @@ Welcome to HR Nexus, we are pleased to present you with a comprehensive site map
         <script src="/scriptForALLPages/script.js"></script>
         <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        //"92xSeSd-o_AO404gS"
+        //'template_ppsl8nf'
 </script>
 <script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "92xSeSd-o_AO404gS",
-      });
-   })();
-
-   document.getElementById("form1").addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent form submission
-
-    const firstName = document.getElementById('firstname').value;
-    const lastName = document.getElementById('lastname').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const description = document.getElementById('description').value;
-
-    // Ensure all fields are filled out
-    if (!firstName || !lastName || !phone || !email || !subject || !description) {
-        alert('Please fill out all fields.');
-        return;
-    }
-
-    const templateParams = {
-        'First Name': firstName,
-        'Last Name': lastName,
-        'Phone': phone,
-        'Email': email,
-        'Subject': subject,
-        'Description': description
-    };
-
-    emailjs.send('service_jxx207q', 'template_mmhswl5', templateParams)
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text,templateParams);
-            alert('Your contact response has been recorded!');
-            document.getElementById("form1").reset(); // Reset form after successful submission
-        }, (error) => {
-            console.log('FAILED...', error);
-            alert('Failed to record your contact response. Please try again later.');
-        });
-
-    // Optionally, store form data locally
-    let contactArray = JSON.parse(localStorage.getItem('contact_array1')) || [];
-    contactArray.push(templateParams);
-    localStorage.setItem('contact_array1', JSON.stringify(contactArray));
-});
-
-
-</script>
-
+    (function(){
+       emailjs.init("92xSeSd-o_AO404gS"); // Replace with your EmailJS public key
+    })();
+ 
+    document.getElementById("form1").addEventListener("submit", (event) => {
+     event.preventDefault(); // Prevent form submission
+ 
+     const firstName = document.getElementById('firstname').value;
+     const lastName = document.getElementById('lastname').value;
+     const phone = document.getElementById('phone').value;
+     const email = document.getElementById('email').value;
+     const subject = document.getElementById('subject').value;
+     const description = document.getElementById('description').value;
+ 
+     // Ensure all fields are filled out
+     if (!firstName || !lastName || !phone || !email || !subject || !description) {
+         alert('Please fill out all fields.');
+         return;
+     }
+ 
+     const templateParams = {
+         firstName: firstName,
+         lastName: lastName,
+         phone: phone,
+         email: email,
+         subject: subject,
+         description: description
+     };
+ 
+     // Log templateParams to debug
+     console.log('Template Parameters:', templateParams);
+ 
+     emailjs.send('service_jxx207q', 'template_ppsl8nf', templateParams)
+         .then((response) => {
+             console.log('SUCCESS!', response.status, response.text);
+             alert('Your contact response has been recorded!');
+             document.getElementById("form1").reset(); // Reset form after successful submission
+         }, (error) => {
+             console.log('FAILED...', error);
+             alert('Failed to record your contact response. Please try again later.');
+         });
+ 
+     // Optionally, store form data locally
+     let contactArray = JSON.parse(localStorage.getItem('contact_array1')) || [];
+     contactArray.push(templateParams);
+     localStorage.setItem('contact_array1', JSON.stringify(contactArray));
+ });
+ </script>
+ 
 </body>
 
 </html>

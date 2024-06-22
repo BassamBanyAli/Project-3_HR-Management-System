@@ -6,7 +6,7 @@ if (localStorage.getItem("auth_links") === "true") {
     const serviceLi=document.createElement("li");
     const serviceLink=document.createElement("a");
     serviceLink.href="/servicesPage/services.html";
-    serviceLink.textContent="service";
+    serviceLink.textContent="services";
     serviceLi.appendChild(serviceLink);
     unorderList.appendChild(serviceLi);
     const logout = document.createElement("li");
