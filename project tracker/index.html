@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hr Management</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets1/assets/img/logo nex.png" rel="icon">
+  <link href="../assets1/assets/img/logo nex.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets1/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets1/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets1/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets1/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets1/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets1/assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="../index/index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../assets1/assets/img/logo nex.png" alt="">
+        <!-- <h1 class="sitename">FlexStart</h1> -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li id="HomeLink"><a href="/starterPage/index.html" class="active">Home<br></a></li>
+          <li id="ContactLink"><a href="../contact/contact2.html">Contact Us</a></li>
+          <li id="AboutLink"><a href="../about/about.html">About Us</a></li>
+          <li id="RegsLink"><a href="/regs/index.html">Register</a></li>
+          <li id="LoginLink"><a href="/LoginPage/index.html">Login</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a href="/profile/profile2.html"></a>
+    </div>
+  </header>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1 class="text-center">Project Tracker</h1>
+        <div class="text-right mb-3">
+            <button class="btn btn-success" data-toggle="modal" data-target="#addProjectModal">Add New Project</button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Project Name</th>
+                            <th>Status</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Project Alpha</td>
+                            <td>In Progress</td>
+                            <td>2024-01-01</td>
+                            <td>2024-06-30</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm edit-button">Edit</button>
+                                <button class="btn btn-danger btn-sm delete-button">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Project Beta</td>
+                            <td>Completed</td>
+                            <td>2023-07-01</td>
+                            <td>2023-12-31</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm edit-button">Edit</button>
+                                <button class="btn btn-danger btn-sm delete-button">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Project Modal -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProjectModalLabel">Add New Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProjectForm">
+                        <div class="form-group">
+                            <label for="projectName">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectStatus">Status</label>
+                            <select class="form-control" id="projectStatus">
+                                <option>Not Started</option>
+                                <option>In Progress</option>
+                                <option>Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date</label>
+                            <input type="date" class="form-control" id="endDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Project</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Project Modal -->
+    <div class="modal fade" id="editProjectModal" tabindex="-1" aria-labelledby="editProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProjectModalLabel">Edit Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProjectForm">
+                        <input type="hidden" id="editProjectId">
+                        <div class="form-group">
+                            <label for="editProjectName">Project Name</label>
+                            <input type="text" class="form-control" id="editProjectName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProjectStatus">Status</label>
+                            <select class="form-control" id="editProjectStatus">
+                                <option>Not Started</option>
+                                <option>In Progress</option>
+                                <option>Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editStartDate">Start Date</label>
+                            <input type="date" class="form-control" id="editStartDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEndDate">End Date</label>
+                            <input type="date" class="form-control" id="editEndDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<hr>
+  <footer id="footer" class="footer">
+  
+  
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6 footer-about">
+          <a href="../index/index.html" class="d-flex align-items-center">
+            <span class="sitename" style="color:  var(--accent-color);">HR Nexus</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Al-Sheikh Khalil St. </p>
+            <p>Irbid, jordan</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>07707777</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+        </div>
+  
+  
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero" class="active">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../about/about.html">About us</a></li>
+
+            <li><i class="bi bi-chevron-right"></i> <a href="../about/about.html#team">Team</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Performance Management.</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Corporate Culture.</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Labor Relations Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Payroll and Benefits</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-2 col-md-12">
+          <h4>Follow Us</h4>
+          <p>You can follow us through these links</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">HR Nexus</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="">HR Nexus</a>
+      </div>
+    </div>  
+  
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#hero" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets1/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets1/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets1/assets/vendor/aos/aos.js"></script>
+  <script src="../assets1/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets1/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets1/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets1/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets1/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets1/assets/js/main.js"></script>
+  <script src="/scriptForALLPages/script.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addProjectForm = document.getElementById('addProjectForm');
+            const editProjectForm = document.getElementById('editProjectForm');
+            const editProjectModal = new bootstrap.Modal(document.getElementById('editProjectModal'));
+            const addProjectModal = new bootstrap.Modal(document.getElementById('addProjectModal'));
+            let editRow;
+
+            addProjectForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const projectName = document.getElementById('projectName').value;
+                const projectStatus = document.getElementById('projectStatus').value;
+                const startDate = document.getElementById('startDate').value;
+                const endDate = document.getElementById('endDate').value;
+
+                const tableBody = document.querySelector('table tbody');
+                const rowCount = tableBody.rows.length + 1;
+
+                const newRow = tableBody.insertRow();
+                newRow.innerHTML = `
+                    <th scope="row">${rowCount}</th>
+                    <td>${projectName}</td>
+                    <td>${projectStatus}</td>
+                    <td>${startDate}</td>
+                    <td>${endDate}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm edit-button">Edit</button>
+                        <button class="btn btn-danger btn-sm delete-button">Delete</button>
+                    </td>
+                `;
+
+                addProjectModal.hide();
+                addProjectForm.reset();
+
+                addEventListenersToButtons(newRow);
+            });
+
+            function addEventListenersToButtons(row) {
+                const editButton = row.querySelector('.edit-button');
+                const deleteButton = row.querySelector('.delete-button');
+
+                editButton.addEventListener('click', function() {
+                    editRow = row;
+                    const cells = row.getElementsByTagName('td');
+                    document.getElementById('editProjectName').value = cells[0].innerText;
+                    document.getElementById('editProjectStatus').value = cells[1].innerText;
+                    document.getElementById('editStartDate').value = cells[2].innerText;
+                    document.getElementById('editEndDate').value = cells[3].innerText;
+                    editProjectModal.show();
+                });
+
+                deleteButton.addEventListener('click', function() {
+                    row.remove();
+                });
+            }
+
+            editProjectForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const projectName = document.getElementById('editProjectName').value;
+                const projectStatus = document.getElementById('editProjectStatus').value;
+                const startDate = document.getElementById('editStartDate').value;
+                const endDate = document.getElementById('editEndDate').value;
+
+                const cells = editRow.getElementsByTagName('td');
+                cells[0].innerText = projectName;
+                cells[1].innerText = projectStatus;
+                cells[2].innerText = startDate;
+                cells[3].innerText = endDate;
+
+                editProjectModal.hide();
+            });
+
+            document.querySelectorAll('table tbody tr').forEach(addEventListenersToButtons);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

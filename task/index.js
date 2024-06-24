@@ -25,15 +25,25 @@ document.getElementById('taskForm').addEventListener('submit', function(event) {
         );
         console.log(filteredEmployees);
    
-
+        var today = new Date();
+        today.setDate(today.getDate() + 1);
+        var tomorrow = today.toISOString().split('T')[0];
+        document.getElementById('startDate').setAttribute('min', tomorrow);
+        
+        
 
     // Get form data
+
+    
+
+
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
     const employeeName = filteredEmployees[0].name;
     const employeePosition=filteredEmployees[0].position;
     const employeeImage=filteredEmployees[0].image;
     const title = document.getElementById('title').value;
-    const startDate = document.getElementById('startDate').value;
-    const endDate = document.getElementById('endDate').value;
+    
     const description = document.getElementById('description').value;
 
 

@@ -1,5 +1,4 @@
 
-
 function display(){
   let profileImg=document.getElementById('profileImg');
     const storedImage=JSON.parse(localStorage.getItem('hrJson')).Image;
@@ -106,6 +105,33 @@ function validateCurrentPassword() {
   }
 }
 
+function validateName(){
+  const nameInput = document.getElementById('fullName').value;
+  const namePat=/^[A-Za-z\s]+$/;
+  if(nameInput!=="" &&!namePat.test(nameInput)){
+    document.getElementById('error_name').textContent = 'Just letters and spaces are allowed';
+    return false;
+  }
+  else{
+  document.getElementById('error_name').textContent = '';
+  return true;
+  }
+}
+
+function validatePhone(){
+  let phoneInput = document.getElementById('Phone').value;
+  const phonePat=/^\d+$/;
+  if(phoneInput!=="" &&!phonePat.test(phoneInput)){
+    document.getElementById('error_phone').textContent = 'Just numbers are allowed';
+    return false;
+  }
+  else{
+  document.getElementById('error_phone').textContent = '';
+  return true;
+}
+
+}
+
 
 function validateNewPassword() {
   const newPassword = document.getElementById('newPassword').value;
@@ -135,6 +161,8 @@ function onInput() {
  
 
   isValid = validateEmail() && validateCurrentPassword() && validateNewPassword();
+  isValid &&=validateName();
+  isValid &&=validatePhone();
  
 
 
@@ -189,4 +217,5 @@ window.location.href = '../profile/profile2.html';
 alert('Profile updated successfully!');
   
 });
+
 

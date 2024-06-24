@@ -40,7 +40,7 @@
     }
     .card {
         margin: auto;
-        max-width: 600px;
+        max-width: 50%;
     }
     .circle-img {
         border-radius: 50%;
@@ -48,6 +48,20 @@
         height: 100px;
         object-fit: cover;
     }
+
+    .btn-saveprofile,
+.btn-saveprofile:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 15px;
+  padding: 8px 25px;
+  /* margin: 0 20px 50px 30px; */
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-top: 10px;
+  /* margin-left: 200px; */
+}
     .btn-saveprofile, .btn-cancle, .btn-sm {
         margin-top: 10px;
     }
@@ -55,6 +69,12 @@
         background-color: #007bff;
         color: white;
     }
+    
+.btn-saveprofile:hover,
+ .btn-saveprofile:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
     .btn-cancle {
         margin-left: 10px;
     }
@@ -86,8 +106,7 @@
 
                 </li>
                 <li><a href="../contact/contact2.html">Contact</a></li>
-                <li><a href="../about/about.html#team">Team</a></li>
-                <li><a href="#">Log Out</a></li>
+                <li><a href="../LoginPage/index.html">Log Out</a></li>
 
 
             </ul>
@@ -105,11 +124,6 @@
 <br>
 <br>
 
-<!-- ahmad: rama need to make the form responsive and some edit for nav  -->
-<!-- ahmad: rama need to make the form responsive and some edit for nav  -->
-<!-- ahmad: rama need to make the form responsive and some edit for nav  -->
-<!-- ahmad: rama need to make the form responsive and some edit for nav  -->
-<!-- ahmad: rama need to make the form responsive and some edit for nav  -->
 
 
 <main id="main" class="main">
@@ -151,6 +165,7 @@
                               <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                               <div class="col-md-8 col-lg-9">
                                   <input name="fullName" type="text" class="form-control" id="fullName" value="">
+                                  <div id="error_name" style="color: red;"></div>
                               </div>
                           </div>
 
@@ -172,6 +187,7 @@
                               <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                               <div class="col-md-8 col-lg-9">
                                   <input name="phone" type="text" class="form-control" id="Phone" value="">
+                                  <div id="error_phone" style="color: red;"></div>
                               </div>
                           </div>
 
@@ -208,7 +224,7 @@
                           </div>
 
                           <div class="text-center">
-                              <a class="btn-saveprofile btn btn-success" href="" id="saveButt">Save Changes</a>
+                              <a class="btn-saveprofile btn " href="" id="saveButt">Save Changes</a>
                               <a class="btn-cancle btn btn-danger" href="../profile/profile2.html">Cancel</a>
                           </div>
                       </form>
@@ -305,9 +321,9 @@
 <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-<!-- <script src="../assets/js/main.js"></script> -->
-<!-- Bootstrap JS with jQuery and Popper.js -->
-<!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<script src="../assets/js/main.js"></script>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
